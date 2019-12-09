@@ -151,7 +151,7 @@ plugin.tx_jhmagnificpopup.settings {
 }
 
 // Include javascript of iframe if enabled global
-[globalVar = LIT:1 = {$plugin.tx_jhmagnificpopup.type.iframe.enableglobal}]
+["1" == "{$plugin.tx_jhmagnificpopup.type.iframe.enableglobal}"]
     plugin.tx_jhmagnificpopup.settings.type.iframe {
         # Copy actual page.jsFooterInline to setup to prevent from data-loss
         setup < page.jsFooterInline
@@ -168,7 +168,7 @@ plugin.tx_jhmagnificpopup.settings {
 [global]
 
 // Include javascript of ajax if enabled global
-[globalVar = LIT:1 = {$plugin.tx_jhmagnificpopup.type.ajax.enableglobal}]
+["1" == "{$plugin.tx_jhmagnificpopup.type.ajax.enableglobal}"]
     plugin.tx_jhmagnificpopup.settings.type.ajax {
         # Copy actual page.jsFooterInline to setup to prevent from data-loss
         setup < page.jsFooterInline
@@ -201,7 +201,7 @@ ajaxcontent {
 }
 
 // Render inline-content
-[globalString = GP:jh_magnificpopup|type=inline]
+[request.getQueryParams()['jh_magnificpopup']['type'] == 'inline']
     ajaxcontent.10 {
         10 >
         10 = CONTENT
@@ -219,7 +219,7 @@ ajaxcontent {
 [global]
 
 // Render from reference to content-element
-[globalString = GP:jh_magnificpopup|type=reference]
+[request.getQueryParams()['jh_magnificpopup']['type'] == 'reference']
     ajaxcontent.10 {
         10 >
         10 = CONTENT
@@ -257,7 +257,7 @@ plugin.tx_jhmagnificpopup._CSS_DEFAULT_STYLE (
 
 
 // Include javascript of inlineCE if enabled
-[globalVar = LIT:1 = {$plugin.tx_jhmagnificpopup.enableAlphaFeatures}]
+["1" == "{$plugin.tx_jhmagnificpopup.enableAlphaFeatures}"]
     plugin.tx_jhmagnificpopup.settings.type.iframe {
         # Copy actual page.jsFooterInline to setup to prevent from data-loss
         setup < page.jsFooterInline

@@ -37,7 +37,7 @@ page.includeJSFooterlibs {
 }
 
 # Config tx_news if support is set
-[globalVar = LIT:1 = {$plugin.tx_jhmagnificpopup.magnificpopup.support.tx_news}]
+["1" == "{$plugin.tx_jhmagnificpopup.magnificpopup.support.tx_news}"]
     plugin.tx_news.settings.detail.media.image {
         lightbox = magnificpopup
     }
